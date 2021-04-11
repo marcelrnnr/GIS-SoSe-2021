@@ -1,0 +1,267 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: url("Background.png");
+    text-align: center;
+}
+
+.navigation{
+    overflow: hidden;
+    background: black;
+    position: fixed;
+    top: 0px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.navigation a{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    text-decoration: none;
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+}
+.navigation a:hover{
+    color: blueviolet;
+}
+#index{
+    color: black;
+    background-color: white;
+    display: inline;
+}
+
+#uebermich{
+   color: black;
+    background-color: white;
+    display: inline;
+}
+
+#kontakt{
+   color: black;
+    background-color: white;
+    display: inline;
+}
+
+.container{
+    text-align: left;
+    text-align: center;
+    padding: 18px;
+    margin: auto;
+    margin-top: 35px;
+    height: auto;
+    width: 800px;
+}
+
+.container2{
+    text-align: left;
+    padding: 20px;
+    margin: auto;
+    width: 800px;
+}
+
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkgoldenrod;
+    margin: auto;
+    width: 300px;
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 600px;
+    padding: 60px;
+    margin: auto;
+}
+
+h3{
+    color: white;
+background: darkgoldenrod;
+    padding: 30px 10px 30px 10px ;
+    box-shadow: 2px 2px 5px gray;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+p{
+    background: burlywood;
+    width: 150px;
+    padding: 20px;
+    margin: auto;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.nav{
+    position: fixed;
+    background: black;
+    width: 150px;
+    padding: 10px 10px 10px 10px;
+}
+
+.Bild{
+    border: orange;
+    border-style: solid;
+    
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.Kontaktdaten{
+    border: black;
+    border-style: solid;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin: auto;
+}
+
+
+
+#Link{
+    color: black;
+    background: none;
+    text-decoration: none;
+}
+
+ul{
+    list-style-type: none;
+   
+}
+
+#Profilbild{
+    width: 270px;
+}
+img{
+    width: 100%;
+}
+.accounts{
+    margin: auto;
+    display: table;
+   width: 750;   
+   border: 20px solid darkgoldenrod;
+     padding: 15px; } 
+
+
+form{                                                               
+    display:table;
+    margin: auto;
+}
+label{
+    width: 150px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    padding:0px;
+
+    color:black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.4em;
+    font-weight: normal;
+    float:left;
+}
+
+input{
+    width: 600px;
+    height: 40px;
+    margin-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 20px 10px 20px;
+    box-sizing: border-box;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2em;
+}
+
+#textfeld{
+    width: 560px;
+    height: 196px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    padding: 10px 20px 10px 20px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2em;
+
+    resize: vertical;
+}
+
+fieldset{
+    width: 752px;
+    border: none;
+    margin:0px;
+    padding:0px;
+
+}
+
+button{                                                                 
+    width: 90px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 70px;
+
+    font-size: 1em;
+
+    float:right;
+} 
+
+.datenschutztext{
+    width: 500px;
+    margin-left: 150px;
+
+    color:black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2em;
+} 
+
+#datenschutz{
+    color:black;
+}
+
+.fa.fa-instagram{                                                               
+    font-size: 50px;
+    color:black;
+    text-decoration: none;
+}
+
+.fa.fa-facebook{
+    padding-left: 20px;
+    font-size: 50px;
+    color:blue;
+    text-decoration: none;
+}
+
+.fa.fa-youtube{
+    padding-left: 20px;
+    font-size: 50px;
+    color: red;
+    text-decoration: none;
+}  
+#footersocialmedia a:hover{                                             /* Icon wird optisch hervorgehoben */
+    color: #4A332E;    
+}
+#footersocialmedia{
+    padding-bottom: 80px; 
+}
+
+footer{
+    width: auto;
+    height: 300px;
+    
+
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+table, th, td{
+
+    border: 5px solid black;
+}
+
+video{
+    width: auto;
+}
