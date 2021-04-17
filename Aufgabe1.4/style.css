@@ -1,0 +1,297 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: url("Background.png");
+    margin: 0;
+}
+.navigation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    position: fixed;
+    list-style: none;
+    background: deepskyblue;
+    width: 100%;
+  }
+  
+  .navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: white;
+  }
+  
+  .navigation a:hover {
+    background: #1565C0;
+  }
+  .header p{
+      font-size: 30px;
+  }
+
+
+#index{
+    color: black;
+    background-color: darkgoldenrod;
+    display: inline;
+}
+
+#uebermich{
+   color: black;
+    background-color: darkgoldenrod;
+    display: inline;
+}
+
+#kontakt{
+   color: black;
+    background-color: darkgoldenrod;
+    display: inline;
+}
+
+ol .essen{
+    color: brown;
+    padding: 20px;
+}
+
+.container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+.flex-item {
+    background: lightgray;
+    padding: 5px;
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+  }
+  
+.header {
+    padding: 60px;
+    text-align: center;
+    background: rgb(70, 95, 177);
+    color: white;
+}
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+  }
+h1{
+    font-size: 70px;
+    color: goldenrod;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    animation-name: h1animation;
+    animation-duration: 3s;
+    position: relative;
+}
+@keyframes h1animation {
+    0%  {color:black; left: 400px; top:-200px;}
+    25%  {color:goldenrod; left: 400px; top:200px;}
+    75%  {color:black; left:-200px; top:200px;}
+    100%  {color:goldenrod; left:0px; top:0px;}
+}
+h2{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 60px;
+    margin: auto;
+}
+h3{
+    color: black;
+background: darkgoldenrod;
+    padding: 30px 10px 30px 10px ;
+    box-shadow: 2px 2px 5px gray;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+p{
+    color: black;
+}
+.Bild{
+    max-width: 100%;
+    
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+.Kontaktdaten{
+    border: black;
+    border-style: solid;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin: auto;
+}
+#Link{
+    color: green;
+    background: none;
+    text-decoration: none;
+}
+#Link2{
+    color: green;
+    background: none;
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+   
+}
+#Profilbild{
+    max-width: 170px;
+}
+#htmlcode{
+    max-width: 500px;
+}
+img{
+    width: 100%;
+    transition: all 1s ease-in-out 0.5s;
+}      
+form{                                                               
+    display:table;
+    margin: auto;
+}
+
+.fa.fa-instagram{                                                               
+    font-size: 50px;
+    color:black;
+    text-decoration: none;
+}
+
+.fa.fa-facebook{
+    padding-left: 20px;
+    font-size: 50px;
+    color:blue;
+    text-decoration: none;
+}
+
+.fa.fa-youtube{
+    padding-left: 20px;
+    font-size: 50px;
+    color: red;
+    text-decoration: none;
+}  
+#footersocialmedia a:hover{                                             /* Icon wird optisch hervorgehoben */
+    color: #4A332E;    
+}
+#footersocialmedia{
+    padding-bottom: 80px; 
+}
+
+
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+table, th, td{
+
+    border: 5px solid black;
+}
+
+video{
+    width: 320px;
+    height: 640px;
+    
+}
+
+h2 + p{
+    color: brown;
+}
+
+p ~ p{
+    color: #4A332E;
+}
+
+tr > th{
+    color: black;
+    background: rgb(247, 205, 99);
+}
+
+tbody{
+    background: rgb(31, 30, 30);
+}
+input{
+    width: 450px;
+    height: 0px;
+    margin-left: 0px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 10px 20px 10px 20px;
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+
+#textfeld{
+    width: 500px;
+    height: 196px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    padding: 10px 20px 10px 20px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+
+    resize: vertical;
+}
+button{                                                                 
+    width: 90px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 150px;
+
+    font-size: 1em;
+    float:inline-start;
+} 
+
+@media all and (max-width: 1024px) {
+    .navigation {
+      justify-content: space-around;
+      position: static;
+    }
+    body{
+        max-width: 100%;
+    }
+    .container{
+        max-width: 100%;
+    }
+  }
+  
+  @media all and (max-width: 600px) {
+    .navigation {
+      flex-flow: column wrap;
+      padding: 0;
+      position: static;
+    }
+    .navigation a { 
+      text-align: center; 
+      padding: 10px;
+      border-top: 1px solid rgba(255, 255, 255,0.3); 
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+    }
+    .container{
+        max-width: 100%;
+        margin: 0;
+    }
+    .flex-item{
+        margin: 0;
+    };
+    h2{
+        padding: 5px;
+        margin: 0;
+    }
+    h3{
+        color: white;
+    background: darkgoldenrod;
+        padding: 0;
+        box-shadow: none;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin: 0;
+    }
+  
+  }
