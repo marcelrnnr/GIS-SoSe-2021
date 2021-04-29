@@ -1,4 +1,4 @@
-/*function a1(): void {
+function a1(): void {
     let x: string = "Alles";
     console.log(x);
     func2();
@@ -17,7 +17,7 @@ function func2(): void {
 
 function func1(): void {
     console.log("Klar?");
-} 
+}
 
 /*
 (K) Aufgabe 1 a)
@@ -40,14 +40,14 @@ Es sollte in der Konsole folgendes ausgegeben werden:
 9, 8, 7, 6, 5, 4, 3, 2, 1
 
 */
-/*
+
 function a2(): void {
     let i: number = 9;
 
     do {
         console.log(i);
         i = i - 1;
-    } while( i > 0);
+    } while (i > 0);
 }
 
 a2();
@@ -93,42 +93,41 @@ Sie sind beide unter einem Namen gespeichert und haben einen Typen.
 
 
 
-/*
+
 let x: string = "Hallo";
 console.log(x);
-func1(x);
+func1_4(x);
 console.log(x);
-func2();
-func3();
+func2_4();
+func3_4();
 console.log(x);
 
-function func1(y: string): void{
+function func1_4(y: string): void {
     y = "Bla";
     console.log(y);
 }
 
-function func2(): void{
+function func2_4(): void {
     let x: string = "Blubb";
     console.log(x);
 }
 
-function func3(): void{
+function func3_4(): void {
     x = "Test";
 }
-*/
+
 
 /*Aufgabe 5 a + b*/
 
-let number1: number = 8;
-let number2: number = 2;
-/*
-function multiply(a: number, b: number) {
+let number15: number = 8;
+let number25: number = 2;
+
+function multiply(a: number, b: number): number {
     return a * b;
 }
-console.log(multiply(number1, number2));
-*/
-/*
-function max(a: number, b: number) {
+console.log(multiply(number15, number25));
+
+function max(a: number, b: number): number {
     if (a > b) {
         return a;
     }
@@ -136,8 +135,8 @@ function max(a: number, b: number) {
         return b;
     }
 }
-console.log(max(number1, number2));
-*/
+console.log(max(number15, number25));
+
 /**c */
 
 function summe(): void {
@@ -152,16 +151,18 @@ function summe(): void {
 summe();
 
 /**d) */
+
 function randomNums(): void {
 
     for (let i: number = 0; i < 10; i++) {
-        console.log(Math.random() * 101));
+        console.log(Math.floor(Math.random() * 101));
     }
 }
 randomNums();
 
 /**e) */
-function factorial(fax: number): number {
+
+function factorial(fac: number): number {
     let factor: number = 1;
     let result: number = 1;
 
@@ -169,12 +170,12 @@ function factorial(fax: number): number {
         result = result * factor;
         factor++;
     }
-    while (factor < fac + 1);
+    while (factor <= fac);
     return result;
 
 }
 
-console.log(factorial(number1));
+console.log(factorial(6));
 
 /**f) */
 
@@ -194,86 +195,98 @@ leapyear(jahr1, jahr2);
 
 
 /* 6 a)*/
-/*
-    let hash: string = "";
 
-    for (let i: number = 0; i < 7; i++) {
-        hash = hash + "#";
-        console.log(hash);
-    }
+let hash: string = "";
 
-    /* b) */
-/*
-    for (let i: number = 0; i < 101; i++) {
-        if (i % 3 == 0) {
-            console.log("Fizz")
-        }
-        else if (i % 5 == 0) {
-            console.log("Buzz")
-        }
-        else {
-            console.log(i);
-        }
-    }
-
-    //* c) */
-/*
-    for (let i: number = 0; i < 101; i++) {
-        if (i % 3 == 0 && i % 5 == 0) {
-            console.log("FizzBuzz")
-        }
-        else if (i % 3 == 0) {
-            console.log("Fizz")
-        }
-        else if (i % 5 == 0){
-            console.log("Buzz");
-        }
-        else{
-            console.log(i);
-        }
-    }
-
-    /**d) */
-/*
-    let schwarzeFelder: string = "#";
-    let weißeFelder: string = " ";
-    let schachbrett: string = "";
-
-    for (let i: number = 0; i < 8; i++) {
-        if (i % 2 == 0) {
-            for (let i: number = 0; i < 4; i++) {
-                schachbrett += weißeFelder;
-                schachbrett += schwarzeFelder;
-            }
-            schachbrett += "/n";
-
-        }
-
-        else {
-            for (let i: number = 0; i < 4; i++) {
-                schachbrett += weißeFelder;
-                schachbrett += schwarzeFelder;
-            }
-            schachbrett += "/n";
-        }
-    }
-    console.log(schachbrett);
-
-    //**e) */
-
-function brett(brettlaenge: number): void {
-    for (let i: number = 0; i < brettlaenge; i++) {
-        if (i % 2 == 0) {
-            for (let i: number = 0; i < brettlaenge / 2; i++) {
-                schachbrett += weißeFelder;
-                schachbrett += schwarzeFelder;
-            }
-            schachbrett += "/n";
-        }
-    }
-    console.log(schachbrett);
+for (let i: number = 0; i < 7; i++) {
+    hash = hash + "#";
+    console.log(hash);
 }
 
+/* b) */
+
+for (let i: number = 0; i < 101; i++) {
+    if (i % 3 == 0) {
+        console.log("Fizz");
+    }
+    else if (i % 5 == 0) {
+        console.log("Buzz");
+    }
+    else {
+        console.log(i);
+    }
+}
+
+//* c) */
+
+for (let i: number = 0; i < 101; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+        console.log("FizzBuzz");
+    }
+    else if (i % 3 == 0) {
+        console.log("Fizz");
+    }
+    else if (i % 5 == 0) {
+        console.log("Buzz");
+    }
+    else {
+        console.log(i);
+    }
+}
+
+/**d) */
 
 
-brett(10);
+let schwarzeFelder: string = "#";
+let weißeFelder: string = " ";
+let schachbrett: string = "";
+
+
+for (let i: number = 0; i < 8; i++) {
+    if (i % 2 == 0) {
+        for (let i: number = 0; i < 4; i++) {
+            schachbrett += weißeFelder;
+            schachbrett += schwarzeFelder;
+        }
+        schachbrett += "\n";
+
+    }
+
+    else {
+        for (let i: number = 0; i < 4; i++) {
+            schachbrett += schwarzeFelder;
+            schachbrett += weißeFelder;
+        }
+        schachbrett += "\n";
+    }
+}
+console.log(schachbrett);
+
+//**e) */
+let schwarzesfeld: string = "#";
+let weißesFeld: string = " ";
+let schachbrett2: string = "";
+let letztesFeld: string = "";
+
+function brett(boardlenght: number): void {
+    for (let i: number = 0; i < boardlenght; i++) {
+        for (let i: number = 0; i < boardlenght; i++) {
+            if (letztesFeld == " ") {
+                schachbrett2 += schwarzesfeld;
+                letztesFeld = "#";
+            }
+            else if (letztesFeld == "#") {
+                schachbrett2 += weißesFeld;
+                letztesFeld = " ";
+            }
+            else {
+                schachbrett2 += weißesFeld;
+                letztesFeld = " ";
+            }
+        }
+        schachbrett2 += "\n";
+    }
+    console.log(schachbrett2);
+}
+
+brett(5);

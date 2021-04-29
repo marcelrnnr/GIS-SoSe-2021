@@ -1,6 +1,6 @@
 "use strict";
-/*function a1(): void {
-    let x: string = "Alles";
+function a1() {
+    let x = "Alles";
     console.log(x);
     func2();
     console.log(x);
@@ -8,18 +8,13 @@
     console.log(x);
     console.log("Logo!");
 }
-
 a1();
-
-
-function func2(): void {
+function func2() {
     console.log("Gute!");
 }
-
-function func1(): void {
+function func1() {
     console.log("Klar?");
 }
-
 /*
 (K) Aufgabe 1 a)
  Variablennamen sind fast frei wählbar. Es dürfen ausschließlich Ziffern (0-9), Buchstaben(a-z, A-Z), sowie Unterstrich und $ vorkommen.
@@ -39,19 +34,14 @@ Es sollte in der Konsole folgendes ausgegeben werden:
 9, 8, 7, 6, 5, 4, 3, 2, 1
 
 */
-/*
-function a2(): void {
-    let i: number = 9;
-
+function a2() {
+    let i = 9;
     do {
         console.log(i);
         i = i - 1;
-    } while( i > 0);
+    } while (i > 0);
 }
-
 a2();
-
-
 /* Aufgabe 3
 VS gibt sofort an wenn es einen Fehler gibt. Durch unterstrichenen Code passt etwas nicht und man kann durch das Lämpchen überprüfen was nicht passt. Schlägt Verbesserungen vor.
 */
@@ -86,40 +76,32 @@ Funktionen enthalten Codeblöcke und Variablen speichern Werte ab
 Gemeinsamkeit normale Variablen und Funktionen:
 Sie sind beide unter einem Namen gespeichert und haben einen Typen.
 */
-/*
-let x: string = "Hallo";
+let x = "Hallo";
 console.log(x);
-func1(x);
+func1_4(x);
 console.log(x);
-func2();
-func3();
+func2_4();
+func3_4();
 console.log(x);
-
-function func1(y: string): void{
+function func1_4(y) {
     y = "Bla";
     console.log(y);
 }
-
-function func2(): void{
-    let x: string = "Blubb";
+function func2_4() {
+    let x = "Blubb";
     console.log(x);
 }
-
-function func3(): void{
+function func3_4() {
     x = "Test";
 }
-*/
 /*Aufgabe 5 a + b*/
-let number1 = 8;
-let number2 = 2;
-/*
-function multiply(a: number, b: number) {
+let number15 = 8;
+let number25 = 2;
+function multiply(a, b) {
     return a * b;
 }
-console.log(multiply(number1, number2));
-*/
-/*
-function max(a: number, b: number) {
+console.log(multiply(number15, number25));
+function max(a, b) {
     if (a > b) {
         return a;
     }
@@ -127,8 +109,7 @@ function max(a: number, b: number) {
         return b;
     }
 }
-console.log(max(number1, number2));
-*/
+console.log(max(number15, number25));
 /**c */
 function summe() {
     let i = 100;
@@ -143,22 +124,21 @@ summe();
 /**d) */
 function randomNums() {
     for (let i = 0; i < 10; i++) {
-        console.log(Math.random() * 101);
-        ;
+        console.log(Math.floor(Math.random() * 101));
     }
 }
 randomNums();
 /**e) */
-function factorial(fax) {
+function factorial(fac) {
     let factor = 1;
     let result = 1;
     do {
         result = result * factor;
         factor++;
-    } while (factor < fac + 1);
+    } while (factor <= fac);
     return result;
 }
-console.log(factorial(number1));
+console.log(factorial(6));
 /**f) */
 let jahr1 = 1900;
 let jahr2 = 2021;
@@ -171,83 +151,83 @@ function leapyear(start, ende) {
 }
 leapyear(jahr1, jahr2);
 /* 6 a)*/
-/*
-    let hash: string = "";
-
-    for (let i: number = 0; i < 7; i++) {
-        hash = hash + "#";
-        console.log(hash);
-    }
-
-    /* b) */
-/*
-    for (let i: number = 0; i < 101; i++) {
-        if (i % 3 == 0) {
-            console.log("Fizz")
-        }
-        else if (i % 5 == 0) {
-            console.log("Buzz")
-        }
-        else {
-            console.log(i);
-        }
-    }
-
-    //* c) */
-/*
-    for (let i: number = 0; i < 101; i++) {
-        if (i % 3 == 0 && i % 5 == 0) {
-            console.log("FizzBuzz")
-        }
-        else if (i % 3 == 0) {
-            console.log("Fizz")
-        }
-        else if (i % 5 == 0){
-            console.log("Buzz");
-        }
-        else{
-            console.log(i);
-        }
-    }
-
-    /**d) */
-/*
-    let schwarzeFelder: string = "#";
-    let weißeFelder: string = " ";
-    let schachbrett: string = "";
-
-    for (let i: number = 0; i < 8; i++) {
-        if (i % 2 == 0) {
-            for (let i: number = 0; i < 4; i++) {
-                schachbrett += weißeFelder;
-                schachbrett += schwarzeFelder;
-            }
-            schachbrett += "/n";
-
-        }
-
-        else {
-            for (let i: number = 0; i < 4; i++) {
-                schachbrett += weißeFelder;
-                schachbrett += schwarzeFelder;
-            }
-            schachbrett += "/n";
-        }
-    }
-    console.log(schachbrett);
-
-    //**e) */
-function brett(brettlaenge) {
-    for (let i = 0; i < brettlaenge; i++) {
-        if (i % 2 == 0) {
-            for (let i = 0; i < brettlaenge / 2; i++) {
-                schachbrett += weißeFelder;
-                schachbrett += schwarzeFelder;
-            }
-            schachbrett += "/n";
-        }
-    }
-    console.log(schachbrett);
+let hash = "";
+for (let i = 0; i < 7; i++) {
+    hash = hash + "#";
+    console.log(hash);
 }
-brett(10);
+/* b) */
+for (let i = 0; i < 101; i++) {
+    if (i % 3 == 0) {
+        console.log("Fizz");
+    }
+    else if (i % 5 == 0) {
+        console.log("Buzz");
+    }
+    else {
+        console.log(i);
+    }
+}
+//* c) */
+for (let i = 0; i < 101; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+        console.log("FizzBuzz");
+    }
+    else if (i % 3 == 0) {
+        console.log("Fizz");
+    }
+    else if (i % 5 == 0) {
+        console.log("Buzz");
+    }
+    else {
+        console.log(i);
+    }
+}
+/**d) */
+let schwarzeFelder = "#";
+let weißeFelder = " ";
+let schachbrett = "";
+for (let i = 0; i < 8; i++) {
+    if (i % 2 == 0) {
+        for (let i = 0; i < 4; i++) {
+            schachbrett += weißeFelder;
+            schachbrett += schwarzeFelder;
+        }
+        schachbrett += "\n";
+    }
+    else {
+        for (let i = 0; i < 4; i++) {
+            schachbrett += schwarzeFelder;
+            schachbrett += weißeFelder;
+        }
+        schachbrett += "\n";
+    }
+}
+console.log(schachbrett);
+//**e) */
+let schwarzesfeld = "#";
+let weißesFeld = " ";
+let schachbrett2 = "";
+let letztesFeld = "";
+function brett(boardlenght) {
+    for (let i = 0; i < boardlenght; i++) {
+        for (let i = 0; i < boardlenght; i++) {
+            if (letztesFeld == " ") {
+                schachbrett2 += schwarzesfeld;
+                letztesFeld = "#";
+            }
+            else if (letztesFeld == "#") {
+                schachbrett2 += weißesFeld;
+                letztesFeld = " ";
+            }
+            else {
+                schachbrett2 += weißesFeld;
+                letztesFeld = " ";
+            }
+        }
+        schachbrett2 += "\n";
+    }
+    console.log(schachbrett2);
+}
+brett(5);
 //# sourceMappingURL=script.js.map
