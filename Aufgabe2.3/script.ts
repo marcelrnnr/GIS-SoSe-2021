@@ -35,6 +35,7 @@ namespace Aufgabe2_3 {
         div.style.position = "absolute";
         div.style.left = (50 + Math.floor(Math.random() * 451)).toString() + "px";
         div.style.right = (50 + Math.floor(Math.random() * 451)).toString() + "px";
+        div.style.top = (50 + Math.floor(Math.random() * 451)).toString() + "px";
         div.classList.add("rectangle");
         previousElement.appendChild(div);
         previousElement = div;
@@ -42,8 +43,6 @@ namespace Aufgabe2_3 {
     }
 }
 
-//**Aufgabe 2 */
-//**a) */
 
 
 

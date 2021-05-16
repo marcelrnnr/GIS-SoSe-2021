@@ -1,31 +1,22 @@
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background: yellowgreen;
-    color: white;
+    background: white;
+    color: black;
     margin-top: 50px;
     text-align: center;
 }
 
 h1{
-    color: white;
+    color: black;
     height: 30px;
 
 }
 
 h2{
+    margin-top: 50px;
     color: white;
     background-color: black;
 
 }
 
-/*
-ul li{
-  list-style-type: none;
-}
-
-
-button{
-    margin-left: 30px;
-}
-*/

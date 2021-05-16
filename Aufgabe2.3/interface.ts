@@ -1,17 +1,17 @@
  namespace Aufgabe2_3 {
 
     export interface Behaelter {
-        behaelterOptionen: String;
-        bild: String;
+        behaelterOptionen: string;
+        bild: string;
     }
 
     export interface Eiskugel {
-        sorte: String;
+        sorte: string;
         
     }
 
     export interface Topping {
-        soße: String;
+        soße: string;
     }
 
     export interface Eiscreme {

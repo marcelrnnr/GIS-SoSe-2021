@@ -1,7 +1,7 @@
 "use strict";
 //**Aufgabe 1 */
-var Aufgabe2_3;
-(function (Aufgabe2_3) {
+var Aufgabe2_4;
+(function (Aufgabe2_4) {
     let addRecButton = document.createElement("Button");
     let textRecButton = document.createTextNode("Rechtecke hinzufügen");
     addRecButton.appendChild(textRecButton);
@@ -32,5 +32,5 @@ var Aufgabe2_3;
         previousElement.appendChild(div);
         previousElement = div;
     }
-})(Aufgabe2_3 || (Aufgabe2_3 = {}));
+})(Aufgabe2_4 || (Aufgabe2_4 = {}));
 //# sourceMappingURL=script.js.map

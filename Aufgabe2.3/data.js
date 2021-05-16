@@ -1,42 +1,104 @@
 "use strict";
 //**Aufgabe 2c) */
-var Aufgabe2_3;
-(function (Aufgabe2_3) {
-    Aufgabe2_3._x = [
+/*
+namespace Aufgabe2_3 {
+
+    export let behaelterX: Behaelter[] = [
+
         {
             behaelterOptionen: "Waffel",
             bild: "waffel.png"
         },
+
         {
             behaelterOptionen: "Becher",
             bild: "becher.png"
         },
+
         {
             behaelterOptionen: "Stiel",
             bild: "Stiel.png"
-        }
-    ];
-    Aufgabe2_3._y = [
+        }];
+
+    export let eiskugelX: Eiskugel[] = [
+
+        {
+            behaelterOptionen: "Waffel",
+            bild: "waffel.png"
+        },
+
+        {
+            behaelterOptionen: "Becher",
+            bild: "becher.png"
+        },
+
+        {
+            behaelterOptionen: "Stiel",
+            bild: "Stiel.png"
+        }];
+}
+
+export let alleBehaelter: string =
+    `
+    {
+        "behaeleterOptionen": "Waffel",
+         "bild": "waffel.png"
+    },
+    {
+        "behaelterOptionen": "Becher",
+        "bild": "becher.png"
+    },
+    {
+        "behaelterOptionen": "Stiel",
+        "bild": "Stiel.png"
+    }`;
+
+export let allEiskugel: string =
+    `
+    {
+        "behaelterOptionen": "Waffel",
+         "bild": "waffel.png"
+    },
+    {
+        "behaelterOptionen": "Becher",
+        "bild": "becher.png"
+    },
+    {
+        "behaelterOptionen": "Stiel",
+        "bild": "Stiel.png"
+    }
+
+    
+/*
+    export let _y: Eiskugel[] = [
+
         {
             sorte: "vanille"
         },
+
         {
             sorte: "schocko"
         },
+
         {
             sorte: "banane"
-        }
-    ];
-    Aufgabe2_3._z = [
+        }];
+
+
+    export let _z: Topping[] = [
+
         {
             soße: "schocko"
         },
+
         {
             soße: "vanille"
         },
+
         {
             soße: "erdbeer"
-        }
-    ];
-})(Aufgabe2_3 || (Aufgabe2_3 = {}));
+        }];
+
+}
+*/
 //# sourceMappingURL=data.js.map
