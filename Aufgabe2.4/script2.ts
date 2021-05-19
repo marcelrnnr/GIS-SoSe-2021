@@ -18,6 +18,7 @@ namespace Aufgabe2_4 {
         chooseButton.dataset.speicheralleBilder = _part.bild;
         div.appendChild(chooseButton);
         return div;
+        
     }
 
 
