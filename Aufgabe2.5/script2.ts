@@ -1,8 +1,19 @@
 
 
-namespace Aufgabe2_4 {
+namespace Aufgabe2_5 {
 
-    let alleEisTeileObj: Eiscreme = JSON.parse(alleBehaelter);
+
+    export interface EisPart {
+        beschreibung: string;
+        bild: string;
+    }
+    export interface Eiscreme {
+        behaelter: EisPart[];
+        eiskugel: EisPart[];
+        topping: EisPart[];
+    }
+
+
     
     function createPartOptions(_part: EisPart): HTMLElement {
         let div: HTMLElement = document.createElement("div");
@@ -23,26 +34,29 @@ namespace Aufgabe2_4 {
     }
 
 
+    function auswahl(_parts: Eiscreme): void {
+
     if (document.querySelector("title").getAttribute("id") == "seite1") {
-        for (let i: number = 0; i < alleEisTeileObj.behaelter.length; i++) {
-            let eiselemente: HTMLElement = createPartOptions(alleEisTeileObj.behaelter[i]);
+        for (let i: number = 0; i < _parts.behaelter.length; i++) {
+            let eiselemente: HTMLElement = createPartOptions(_parts.behaelter[i]);
             document.body.appendChild(eiselemente);
             
         }
     }
 
     if (document.querySelector("title").getAttribute("id") == "seite2") {
-        for (let i: number = 0; i < alleEisTeileObj.eiskugel.length; i++) {
-            let eiselemente: HTMLElement = createPartOptions(alleEisTeileObj.eiskugel[i]);
+        for (let i: number = 0; i < _parts.eiskugel.length; i++) {
+            let eiselemente: HTMLElement = createPartOptions(_parts.eiskugel[i]);
             document.body.appendChild(eiselemente);
         }
     }
 
     if (document.querySelector("title").getAttribute("id") == "seite3") {
-        for (let i: number = 0; i < alleEisTeileObj.topping.length; i++) {
-            let eiselemente: HTMLElement = createPartOptions(alleEisTeileObj.topping[i]);
+        for (let i: number = 0; i < _parts.topping.length; i++) {
+            let eiselemente: HTMLElement = createPartOptions(_parts.topping[i]);
             document.body.appendChild(eiselemente);
         }
+    }
     }
 
 
@@ -54,6 +68,7 @@ namespace Aufgabe2_4 {
             console.log(localStorage.getItem("ausgewaehlterBehaelter"));
             console.log(localStorage.getItem("ausgewaehlterBehaelterBild"));
         }
+
         if (document.querySelector("title").getAttribute("id") == "seite2") {
             localStorage.setItem("ausgewaehlteEiskugel", output.dataset.speicheralles);
             localStorage.setItem("ausgewaehltesEiskugelBild", output.dataset.speicheralleBilder);  
@@ -114,6 +129,31 @@ namespace Aufgabe2_4 {
         div.appendChild(behaelterBild);
     }
 
+
+
+    //2b)
+
+    async function getData(_url: RequestInfo): Promise<void> {
+        let response: Response = await fetch(_url);
+        console.log("Response: ", response);
+        let data: Eiscreme = await response.json();
+        auswahl(data);
+    }
+
+    getData("https://github.com/xCashio/GIS-SoSe-2021/blob/main/Aufgabe_2.5/data.json");
+
+    //2c)
+/*
+    async function sendData(_url: RequestInfo): Promise <void> {
+        let query: URLSearchParams = new URLSearchParams (localStorage);
+        console.log(query.toString());
+        _url = _url + "?" + query.toString();
+        let answer: Response = await fetch(_url);
+
+
+    }
+sendData("http://gis-communication.herokuapp.com");
+*/
 }
 
 

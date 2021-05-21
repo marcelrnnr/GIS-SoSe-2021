@@ -1,53 +1,44 @@
-
-
-namespace Aufgabe2_4 {
-
-    let alleEisTeileObj: Eiscreme = JSON.parse(alleBehaelter);
-    
-    function createPartOptions(_part: EisPart): HTMLElement {
-        let div: HTMLElement = document.createElement("div");
+"use strict";
+var Aufgabe2_5;
+(function (Aufgabe2_5) {
+    function createPartOptions(_part) {
+        let div = document.createElement("div");
         div.style.maxWidth = "200px";
-        let picture: HTMLImageElement = document.createElement("img");
+        let picture = document.createElement("img");
         picture.src = _part.bild;
         picture.style.width = "100%";
         div.appendChild(picture);
-        let chooseButton: HTMLElement = document.createElement("Button");
-        let textChooseButton: Text = document.createTextNode(_part.beschreibung);
+        let chooseButton = document.createElement("Button");
+        let textChooseButton = document.createTextNode(_part.beschreibung);
         chooseButton.appendChild(textChooseButton);
         chooseButton.addEventListener("click", bilder);
         chooseButton.dataset.speicheralles = _part.beschreibung;
         chooseButton.dataset.speicheralleBilder = _part.bild;
         div.appendChild(chooseButton);
         return div;
-        
     }
-
-
-    if (document.querySelector("title").getAttribute("id") == "seite1") {
-        for (let i: number = 0; i < alleEisTeileObj.behaelter.length; i++) {
-            let eiselemente: HTMLElement = createPartOptions(alleEisTeileObj.behaelter[i]);
-            document.body.appendChild(eiselemente);
-            
+    function auswahl(_parts) {
+        if (document.querySelector("title").getAttribute("id") == "seite1") {
+            for (let i = 0; i < _parts.behaelter.length; i++) {
+                let eiselemente = createPartOptions(_parts.behaelter[i]);
+                document.body.appendChild(eiselemente);
+            }
+        }
+        if (document.querySelector("title").getAttribute("id") == "seite2") {
+            for (let i = 0; i < _parts.eiskugel.length; i++) {
+                let eiselemente = createPartOptions(_parts.eiskugel[i]);
+                document.body.appendChild(eiselemente);
+            }
+        }
+        if (document.querySelector("title").getAttribute("id") == "seite3") {
+            for (let i = 0; i < _parts.topping.length; i++) {
+                let eiselemente = createPartOptions(_parts.topping[i]);
+                document.body.appendChild(eiselemente);
+            }
         }
     }
-
-    if (document.querySelector("title").getAttribute("id") == "seite2") {
-        for (let i: number = 0; i < alleEisTeileObj.eiskugel.length; i++) {
-            let eiselemente: HTMLElement = createPartOptions(alleEisTeileObj.eiskugel[i]);
-            document.body.appendChild(eiselemente);
-        }
-    }
-
-    if (document.querySelector("title").getAttribute("id") == "seite3") {
-        for (let i: number = 0; i < alleEisTeileObj.topping.length; i++) {
-            let eiselemente: HTMLElement = createPartOptions(alleEisTeileObj.topping[i]);
-            document.body.appendChild(eiselemente);
-        }
-    }
-
-
-    function bilder(_input: MouseEvent): void {
-        let output: HTMLElement = <HTMLElement>_input.target;
+    function bilder(_input) {
+        let output = _input.target;
         if (document.querySelector("title").getAttribute("id") == "seite1") {
             localStorage.setItem("ausgewaehlterBehaelter", output.dataset.speicheralles);
             localStorage.setItem("ausgewaehlterBehaelterBild", output.dataset.speicheralleBilder);
@@ -56,7 +47,7 @@ namespace Aufgabe2_4 {
         }
         if (document.querySelector("title").getAttribute("id") == "seite2") {
             localStorage.setItem("ausgewaehlteEiskugel", output.dataset.speicheralles);
-            localStorage.setItem("ausgewaehltesEiskugelBild", output.dataset.speicheralleBilder);  
+            localStorage.setItem("ausgewaehltesEiskugelBild", output.dataset.speicheralleBilder);
             console.log(localStorage.getItem("ausgewaehlteEiskugel"));
             console.log(localStorage.getItem("ausgewaehltesEiskugelBild"));
         }
@@ -68,56 +59,63 @@ namespace Aufgabe2_4 {
         }
     }
     if (document.querySelector("title").getAttribute("id") == "seite4") {
-        let div: HTMLDivElement = document.createElement("div");
+        let div = document.createElement("div");
         div.style.maxWidth = "300px";
         document.body.appendChild(div);
-        let soßenBild: HTMLImageElement = document.createElement("img");
+        let soßenBild = document.createElement("img");
         soßenBild.src = localStorage.getItem("ausgewaehlteSosseBild");
         soßenBild.style.width = "100%";
         div.appendChild(soßenBild);
-
-        let kugelBild: HTMLImageElement = document.createElement("img");
+        let kugelBild = document.createElement("img");
         kugelBild.src = localStorage.getItem("ausgewaehltesEiskugelBild");
         kugelBild.style.width = "100%";
         div.appendChild(kugelBild);
-
-        let behaelterBild: HTMLImageElement = document.createElement("img");
+        let behaelterBild = document.createElement("img");
         behaelterBild.src = localStorage.getItem("ausgewaehlterBehaelterBild");
         behaelterBild.style.width = "100%";
         div.appendChild(behaelterBild);
     }
-
     if (document.querySelector("title").getAttribute("id") == "seite3") {
-        let div: HTMLDivElement = document.createElement("div");
+        let div = document.createElement("div");
         div.style.maxWidth = "300px";
         document.body.appendChild(div);
-      
-        let kugelBild: HTMLImageElement = document.createElement("img");
+        let kugelBild = document.createElement("img");
         kugelBild.src = localStorage.getItem("ausgewaehltesEiskugelBild");
         kugelBild.style.width = "100%";
         div.appendChild(kugelBild);
-
-        let behaelterBild: HTMLImageElement = document.createElement("img");
+        let behaelterBild = document.createElement("img");
         behaelterBild.src = localStorage.getItem("ausgewaehlterBehaelterBild");
         behaelterBild.style.width = "100%";
         div.appendChild(behaelterBild);
     }
-
     if (document.querySelector("title").getAttribute("id") == "seite2") {
-        let div: HTMLDivElement = document.createElement("div");
+        let div = document.createElement("div");
         div.style.maxWidth = "300px";
         document.body.appendChild(div);
-
-        let behaelterBild: HTMLImageElement = document.createElement("img");
+        let behaelterBild = document.createElement("img");
         behaelterBild.src = localStorage.getItem("ausgewaehlterBehaelterBild");
         behaelterBild.style.width = "100%";
         div.appendChild(behaelterBild);
     }
-
-}
-
-
-
-
-
-
+    //2b)
+    async function getData(_url) {
+        let response = await fetch(_url);
+        console.log("Response: ", response);
+        let data = await response.json();
+        auswahl(data);
+    }
+    getData("https://github.com/xCashio/GIS-SoSe-2021/blob/main/Aufgabe_2.5/data.json");
+    //2c)
+    /*
+        async function sendData(_url: RequestInfo): Promise <void> {
+            let query: URLSearchParams = new URLSearchParams (localStorage);
+            console.log(query.toString());
+            _url = _url + "?" + query.toString();
+            let answer: Response = await fetch(_url);
+    
+    
+        }
+    sendData("http://gis-communication.herokuapp.com");
+    */
+})(Aufgabe2_5 || (Aufgabe2_5 = {}));
+//# sourceMappingURL=script2.js.map

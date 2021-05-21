@@ -1,0 +1,22 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+    color: black;
+    margin-top: 50px;
+    text-align: center;
+}
+
+h1{
+    color: black;
+    height: 30px;
+
+}
+
+h2{
+    margin-top: 50px;
+    color: white;
+    background-color: black;
+
+}
+
