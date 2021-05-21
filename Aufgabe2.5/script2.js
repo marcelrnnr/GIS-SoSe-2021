@@ -11,7 +11,7 @@ var Aufgabe2_5;
         let chooseButton = document.createElement("Button");
         let textChooseButton = document.createTextNode(_part.beschreibung);
         chooseButton.appendChild(textChooseButton);
-        chooseButton.addEventListener("click", bilder);
+        chooseButton.addEventListener("click", saveSelection);
         chooseButton.dataset.speicheralles = _part.beschreibung;
         chooseButton.dataset.speicheralleBilder = _part.bild;
         div.appendChild(chooseButton);
@@ -37,7 +37,7 @@ var Aufgabe2_5;
             }
         }
     }
-    function bilder(_input) {
+    function saveSelection(_input) {
         let output = _input.target;
         if (document.querySelector("title").getAttribute("id") == "seite1") {
             localStorage.setItem("ausgewaehlterBehaelter", output.dataset.speicheralles);
@@ -104,18 +104,24 @@ var Aufgabe2_5;
         let data = await response.json();
         auswahl(data);
     }
-    getData("https://github.com/xCashio/GIS-SoSe-2021/blob/main/Aufgabe_2.5/data.json");
+    getData("https://marcelrnnr.github.io/GIS-SoSe-2021/Aufgabe2.5/data.json");
     //2c)
-    /*
-        async function sendData(_url: RequestInfo): Promise <void> {
-            let query: URLSearchParams = new URLSearchParams (localStorage);
-            console.log(query.toString());
-            _url = _url + "?" + query.toString();
-            let answer: Response = await fetch(_url);
-    
-    
+    async function sendData(_url) {
+        let query = new URLSearchParams(localStorage);
+        console.log(query.toString());
+        _url = _url + "?" + query.toString();
+        let answer = await fetch(_url);
+        let output = await answer.json();
+        let displayResponse = document.getElementById("3c");
+        if (output.error) {
+            displayResponse.className = "Error";
+            displayResponse.innerText = output.error;
         }
-    sendData("http://gis-communication.herokuapp.com");
-    */
+        else {
+            displayResponse.className = "Message";
+            displayResponse.innerText = output.Message;
+        }
+    }
+    sendData("https://gis-communication.herokuapp.com");
 })(Aufgabe2_5 || (Aufgabe2_5 = {}));
 //# sourceMappingURL=script2.js.map

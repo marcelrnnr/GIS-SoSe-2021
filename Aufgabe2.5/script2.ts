@@ -12,9 +12,12 @@ namespace Aufgabe2_5 {
         eiskugel: EisPart[];
         topping: EisPart[];
     }
+    export interface Answer {
+        [key: string]: string;
+    }
 
 
-    
+
     function createPartOptions(_part: EisPart): HTMLElement {
         let div: HTMLElement = document.createElement("div");
         div.style.maxWidth = "200px";
@@ -25,42 +28,42 @@ namespace Aufgabe2_5 {
         let chooseButton: HTMLElement = document.createElement("Button");
         let textChooseButton: Text = document.createTextNode(_part.beschreibung);
         chooseButton.appendChild(textChooseButton);
-        chooseButton.addEventListener("click", bilder);
+        chooseButton.addEventListener("click", saveSelection);
         chooseButton.dataset.speicheralles = _part.beschreibung;
         chooseButton.dataset.speicheralleBilder = _part.bild;
         div.appendChild(chooseButton);
         return div;
-        
+
     }
 
 
     function auswahl(_parts: Eiscreme): void {
 
-    if (document.querySelector("title").getAttribute("id") == "seite1") {
-        for (let i: number = 0; i < _parts.behaelter.length; i++) {
-            let eiselemente: HTMLElement = createPartOptions(_parts.behaelter[i]);
-            document.body.appendChild(eiselemente);
-            
+        if (document.querySelector("title").getAttribute("id") == "seite1") {
+            for (let i: number = 0; i < _parts.behaelter.length; i++) {
+                let eiselemente: HTMLElement = createPartOptions(_parts.behaelter[i]);
+                document.body.appendChild(eiselemente);
+
+            }
+        }
+
+        if (document.querySelector("title").getAttribute("id") == "seite2") {
+            for (let i: number = 0; i < _parts.eiskugel.length; i++) {
+                let eiselemente: HTMLElement = createPartOptions(_parts.eiskugel[i]);
+                document.body.appendChild(eiselemente);
+            }
+        }
+
+        if (document.querySelector("title").getAttribute("id") == "seite3") {
+            for (let i: number = 0; i < _parts.topping.length; i++) {
+                let eiselemente: HTMLElement = createPartOptions(_parts.topping[i]);
+                document.body.appendChild(eiselemente);
+            }
         }
     }
 
-    if (document.querySelector("title").getAttribute("id") == "seite2") {
-        for (let i: number = 0; i < _parts.eiskugel.length; i++) {
-            let eiselemente: HTMLElement = createPartOptions(_parts.eiskugel[i]);
-            document.body.appendChild(eiselemente);
-        }
-    }
 
-    if (document.querySelector("title").getAttribute("id") == "seite3") {
-        for (let i: number = 0; i < _parts.topping.length; i++) {
-            let eiselemente: HTMLElement = createPartOptions(_parts.topping[i]);
-            document.body.appendChild(eiselemente);
-        }
-    }
-    }
-
-
-    function bilder(_input: MouseEvent): void {
+    function saveSelection(_input: MouseEvent): void {
         let output: HTMLElement = <HTMLElement>_input.target;
         if (document.querySelector("title").getAttribute("id") == "seite1") {
             localStorage.setItem("ausgewaehlterBehaelter", output.dataset.speicheralles);
@@ -71,7 +74,7 @@ namespace Aufgabe2_5 {
 
         if (document.querySelector("title").getAttribute("id") == "seite2") {
             localStorage.setItem("ausgewaehlteEiskugel", output.dataset.speicheralles);
-            localStorage.setItem("ausgewaehltesEiskugelBild", output.dataset.speicheralleBilder);  
+            localStorage.setItem("ausgewaehltesEiskugelBild", output.dataset.speicheralleBilder);
             console.log(localStorage.getItem("ausgewaehlteEiskugel"));
             console.log(localStorage.getItem("ausgewaehltesEiskugelBild"));
         }
@@ -106,7 +109,7 @@ namespace Aufgabe2_5 {
         let div: HTMLDivElement = document.createElement("div");
         div.style.maxWidth = "300px";
         document.body.appendChild(div);
-      
+
         let kugelBild: HTMLImageElement = document.createElement("img");
         kugelBild.src = localStorage.getItem("ausgewaehltesEiskugelBild");
         kugelBild.style.width = "100%";
@@ -140,20 +143,28 @@ namespace Aufgabe2_5 {
         auswahl(data);
     }
 
-    getData("https://github.com/xCashio/GIS-SoSe-2021/blob/main/Aufgabe_2.5/data.json");
+    getData("https://marcelrnnr.github.io/GIS-SoSe-2021/Aufgabe2.5/data.json");
 
     //2c)
-/*
-    async function sendData(_url: RequestInfo): Promise <void> {
-        let query: URLSearchParams = new URLSearchParams (localStorage);
+
+    async function sendData(_url: RequestInfo): Promise<void> {
+        let query: URLSearchParams = new URLSearchParams(localStorage);
         console.log(query.toString());
         _url = _url + "?" + query.toString();
         let answer: Response = await fetch(_url);
-
-
+        let output: Answer = await answer.json();
+        let displayResponse: HTMLDivElement = <HTMLParagraphElement>document.getElementById("3c");
+        if (output.error) {
+            displayResponse.className = "Error";
+            displayResponse.innerText = output.error;
+        }
+        else {
+            displayResponse.className = "Message";
+            displayResponse.innerText = output.Message;
+        }
     }
-sendData("http://gis-communication.herokuapp.com");
-*/
+    sendData("https://gis-communication.herokuapp.com");
+
 }
 
 
