@@ -147,6 +147,7 @@ namespace Aufgabe2_5 {
 
     //2c)
 
+    if (document.querySelector("title").getAttribute("id") == "seite4") {
     async function sendData(_url: RequestInfo): Promise<void> {
         let query: URLSearchParams = new URLSearchParams(localStorage);
         console.log(query.toString());
@@ -160,10 +161,11 @@ namespace Aufgabe2_5 {
         }
         else {
             displayResponse.className = "Message";
-            displayResponse.innerText = output.Message;
+            displayResponse.innerText = output.message;
         }
     }
     sendData("https://gis-communication.herokuapp.com");
+}
 
 }
 

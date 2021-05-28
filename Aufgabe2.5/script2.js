@@ -106,22 +106,24 @@ var Aufgabe2_5;
     }
     getData("https://marcelrnnr.github.io/GIS-SoSe-2021/Aufgabe2.5/data.json");
     //2c)
-    async function sendData(_url) {
-        let query = new URLSearchParams(localStorage);
-        console.log(query.toString());
-        _url = _url + "?" + query.toString();
-        let answer = await fetch(_url);
-        let output = await answer.json();
-        let displayResponse = document.getElementById("3c");
-        if (output.error) {
-            displayResponse.className = "Error";
-            displayResponse.innerText = output.error;
+    if (document.querySelector("title").getAttribute("id") == "seite4") {
+        async function sendData(_url) {
+            let query = new URLSearchParams(localStorage);
+            console.log(query.toString());
+            _url = _url + "?" + query.toString();
+            let answer = await fetch(_url);
+            let output = await answer.json();
+            let displayResponse = document.getElementById("3c");
+            if (output.error) {
+                displayResponse.className = "Error";
+                displayResponse.innerText = output.error;
+            }
+            else {
+                displayResponse.className = "Message";
+                displayResponse.innerText = output.message;
+            }
         }
-        else {
-            displayResponse.className = "Message";
-            displayResponse.innerText = output.Message;
-        }
+        sendData("https://gis-communication.herokuapp.com");
     }
-    sendData("https://gis-communication.herokuapp.com");
 })(Aufgabe2_5 || (Aufgabe2_5 = {}));
 //# sourceMappingURL=script2.js.map
