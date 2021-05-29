@@ -11,7 +11,7 @@ var P_3_1Server;
         }
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
-        let _url = "https://dbgissose2021.herokuapp.com/";
+        let _url = "https://gissoseapp.herokuapp.com";
         _url = _url + "?" + query.toString();
         let answer = await fetch(_url);
         let output = await answer.text();

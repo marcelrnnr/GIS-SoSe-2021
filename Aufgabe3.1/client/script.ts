@@ -9,7 +9,7 @@ namespace P_3_1Server {
         }
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        let _url: RequestInfo = "https://dbgissose2021.herokuapp.com/";
+        let _url: RequestInfo = "https://gissoseapp.herokuapp.com";
         _url = _url + "?" + query.toString();
         let answer: Response = await fetch(_url);
         let output: string = await answer.text();
