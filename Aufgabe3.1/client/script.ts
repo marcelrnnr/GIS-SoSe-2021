@@ -16,6 +16,6 @@ namespace P_3_1Server {
         let displayResponse: HTMLParagraphElement = <HTMLDivElement>document.getElementById("answer");
         displayResponse.innerText = output;
     }
-    let sendButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("button");
+    let sendButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("Button");
     sendButton.addEventListener("click", sendData);
 }

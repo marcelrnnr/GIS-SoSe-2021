@@ -18,7 +18,7 @@ var P_3_1Server;
         let displayResponse = document.getElementById("answer");
         displayResponse.innerText = output;
     }
-    let sendButton = document.getElementById("button");
+    let sendButton = document.getElementById("Button");
     sendButton.addEventListener("click", sendData);
 })(P_3_1Server || (P_3_1Server = {}));
 //# sourceMappingURL=script.js.map
