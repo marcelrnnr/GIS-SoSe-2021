@@ -9,7 +9,7 @@ namespace P_3_2Server {
         _url = _url + "?" + query.toString();
         let answer: Response = await fetch(_url);
         let output: string = await answer.text();
-        displayResponse.innerText = output;
+        displayResponse.innerHTML = output;
     }
 
     async function sendDataJSON(): Promise<void> {

@@ -11,7 +11,7 @@ var P_3_2Server;
         _url = _url + "?" + query.toString();
         let answer = await fetch(_url);
         let output = await answer.text();
-        displayResponse.innerText = output;
+        displayResponse.innerHTML = output;
     }
     async function sendDataJSON() {
         let formData = new FormData(document.forms[0]);
