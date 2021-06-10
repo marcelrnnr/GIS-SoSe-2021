@@ -2,7 +2,6 @@ namespace P_3_2Server {
     let displayResponse: HTMLParagraphElement = <HTMLDivElement>document.getElementById("answer");
     async function sendDataHTML(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-
         let _url: RequestInfo = "https://gissoseapp.herokuapp.com";
         _url += "/html";
         // tslint:disable-next-line: no-any
@@ -26,10 +25,9 @@ namespace P_3_2Server {
         console.log(output);
 
     }
-    let sendButtonHTML: HTMLButtonElement = <HTMLButtonElement>document.getElementById("htmlbutton");
-    sendButtonHTML.addEventListener("click", sendDataHTML);
-    let sendButtonJSON: HTMLButtonElement = <HTMLButtonElement>document.getElementById("jsonbutton");
-    sendButtonJSON.addEventListener("click", sendDataJSON);
+    document.getElementById("htmlbutton").addEventListener("click", sendDataHTML);
+    document.getElementById("jsonbutton").addEventListener("click", sendDataJSON);
+    
 
     
     interface JsonAnswer {
