@@ -8,13 +8,11 @@ export namespace P_3_4Server {
         port = 8100;                                                //gebe dem Port die Nummer 8100 
     startServer(port);
     function startServer(_port: number | string): void {
-        let server: Http.Server = Http.createServer();  //erstellt einen Server
+        let server: Http.Server = Http.createServer();              //erstellt einen Server
         console.log("Starting server" + _port);
         server.addListener("request", handleRequest);                   //Eventlistener für Anfragen und ListenerFunktionen
         server.listen(port);
     }
-
-
 }
 
 let databaseURL: string = "mongodb+srv://Marcelrnnr:123ich@gissose21.prtdo.mongodb.net/letzteAbgabe?retryWrites=true&w=majority";
@@ -27,29 +25,25 @@ async function handleRequest(_request: Http.IncomingMessage, _response: Http.Ser
     if (_request.url) {
         let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
         let path: string = <string>url.pathname;
-        let input: Data = {name: url.query.name + "", email: url.query.email + "", betreff: url.query.betreff + ""};
+        let input: Data = { name: url.query.name + " ", email: url.query.email + " ", betreff: url.query.betreff + " " };
         if (path == "/sendData") {
-           // for (let key in url.query) {
-              //  _response.write("<p>" + key + ":" + url.query[key] + "</p>");
-            //}
             let data: string = await sendDatabaseData(databaseURL, input);
             _response.write(data);
         }
-
         else if (path == "/getData") {
-           let data: Data[] = await getDatabaseData(databaseURL);
-           _response.write(JSON.stringify(data));
-        } 
+            let data: Data[] = await getDatabaseData(databaseURL);
+            _response.write(JSON.stringify(data));
+            console.log(data);
+            
+        }
     }
     _response.end();
 }
-
 interface Data {
     name: string;
     email: string;
     betreff: string;
 }
-
 async function getDatabaseData(_url: string): Promise<Data[]> {
     let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
     let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
@@ -60,12 +54,12 @@ async function getDatabaseData(_url: string): Promise<Data[]> {
     let data: Data[] = await cursor.toArray();
     return data;
 }
-
-async function sentDatabaseData(_url: string, _formData: Data): Promise<void> {
+async function sendDatabaseData(_url: string, _formData: Data): Promise<string> {
     let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
     let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
     await mongoClient.connect();
     let orders: Mongo.Collection = mongoClient.db("letzeAbgabe").collection("Daten");
     orders.insertOne(_formData);
-let answer: string = "dieAntwort"
+    let answer: string = "dieAntwort";
+    return answer;
 }
