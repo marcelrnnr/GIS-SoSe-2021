@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="client/script.js" defer></script>
+    <title>Kapite34</title>
+</head>
+
+<body>
+
+    <!--Kontaktformular-->
+    <h1>Formular</h1>
+    <form action="https://gissoseapp.herokuapp.com" method="GET">
+
+        <label for="name"> Name </label>
+        <input type="text" name="name" id="name">
+        <label for="email"> Email </label>
+        <input type="email" name="email" id="email">
+        <label for="betreff"> Betreff </label>
+        <input type="text" name="betreff" id="betreff">
+
+
+
+        <!--Sendenbutton-->
+        <button id="htmlbutton" type="button"> An HTML senden</button>
+        <button id="jsonbutton" type="button"> An JSON senden</button>
+
+    </form>
+
+    <h1>Data</h1>
+    <p id="answer"> </p>
+</body>
+
+</html>

@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "<i>kursiv</i> und <b>fett</b> und <font size=-1>klein</font>",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "@types/mongodb": "^3.6.18",
+    "mongodb": "^3.6.9"
+  },
   "devDependencies": {},
   "scripts": {
-    "start": "node ./Aufgabe3.2/server/script.js"
+    "start": "node ./Aufgabe3.4/server/script.js"
   },
   "repository": {
     "type": "git",
