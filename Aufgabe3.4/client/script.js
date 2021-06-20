@@ -1,11 +1,21 @@
 "use strict";
-var P_3_2Server;
-(function (P_3_2Server) {
+var P_3_4Client;
+(function (P_3_4Client) {
     let displayResponse = document.getElementById("answer");
-    async function sendDataHTML() {
+    async function sendData() {
         let formData = new FormData(document.forms[0]);
         let _url = "https://gissoseapp.herokuapp.com";
-        _url += "/html";
+        _url += "/sendData";
+        // tslint:disable-next-line: no-any
+        let query = new URLSearchParams(formData);
+        _url = _url + "?" + query.toString();
+        let answer = await fetch(_url);
+        console.log(answer);
+    }
+    async function getData() {
+        let formData = new FormData(document.forms[0]);
+        let _url = "https://gissoseapp.herokuapp.com";
+        _url += "/getData";
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         _url = _url + "?" + query.toString();
@@ -13,18 +23,7 @@ var P_3_2Server;
         let output = await answer.text();
         displayResponse.innerHTML = output;
     }
-    async function sendDataJSON() {
-        let formData = new FormData(document.forms[0]);
-        let _url = "https://gissoseapp.herokuapp.com";
-        _url += "/json";
-        // tslint:disable-next-line: no-any
-        let query = new URLSearchParams(formData);
-        _url = _url + "?" + query.toString();
-        let answer = await fetch(_url);
-        let output = await answer.json();
-        console.log(output);
-    }
-    document.getElementById("htmlbutton").addEventListener("click", sendDataHTML);
-    document.getElementById("jsonbutton").addEventListener("click", sendDataJSON);
-})(P_3_2Server || (P_3_2Server = {}));
+    document.getElementById("button1").addEventListener("click", sendData);
+    document.getElementById("button2").addEventListener("click", getData);
+})(P_3_4Client || (P_3_4Client = {}));
 //# sourceMappingURL=script.js.map
